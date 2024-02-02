@@ -100,6 +100,7 @@ function ManifestDropZone() {
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
+            setBase64Image({ image: "" });
             handleToastOpen("Uploaded image successfully!", "success");
             setTimeout(() => {
               setUploadProgress(0);
@@ -108,6 +109,7 @@ function ManifestDropZone() {
         })
         .catch((error) => {
           handleToastOpen("Error in upload", error);
+          setBase64Image({ image: "" });
           setUploadProgress(0);
         });
     } else {

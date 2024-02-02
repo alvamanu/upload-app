@@ -18,6 +18,8 @@ import ToggleSwitch from "./ToggleSwitch";
 
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import ManifestDropZone from "./ManifestDropZone";
 
 const UploadModalContent = () => {
@@ -31,7 +33,7 @@ const UploadModalContent = () => {
   });
 
   const handleChange = (event: SelectChangeEvent) => {
-    setValue({ [event.target.name]: event.target.value });
+    setValue({ ...value, [event.target.name]: event.target.value });
   };
 
   const handleChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,6 +61,7 @@ const UploadModalContent = () => {
                 Select Import Name:
               </InputLabel>
               <Select
+                IconComponent={(props) => <ExpandMoreIcon {...props} />}
                 name="importName"
                 labelId="select-import-name-label"
                 value={value.importName}
@@ -313,6 +316,7 @@ const UploadModalContent = () => {
                 Select Client
               </InputLabel>
               <Select
+                IconComponent={(props) => <ExpandMoreIcon {...props} />}
                 name="testingCenter1"
                 style={{ width: 140 }}
                 labelId="testingCenter1-label"
@@ -355,6 +359,7 @@ const UploadModalContent = () => {
                 Select Client
               </InputLabel>
               <Select
+                IconComponent={(props) => <ExpandMoreIcon {...props} />}
                 name="testingCenter2"
                 style={{ width: 140 }}
                 labelId="testingCenter2-label"
@@ -397,6 +402,7 @@ const UploadModalContent = () => {
                 Select Client
               </InputLabel>
               <Select
+                IconComponent={(props) => <ExpandMoreIcon {...props} />}
                 name="testingCenter3"
                 style={{ width: 140 }}
                 labelId="testingCenter3-label"
@@ -439,6 +445,7 @@ const UploadModalContent = () => {
                 Select Client
               </InputLabel>
               <Select
+                IconComponent={(props) => <ExpandMoreIcon {...props} />}
                 name="testingCenter4"
                 style={{ width: 140 }}
                 labelId="testingCenter4-label"
