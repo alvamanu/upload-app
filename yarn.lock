@@ -597,15 +597,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^14.1.0":
-  version: 14.1.0
-  resolution: "@next/font@npm:14.1.0"
-  peerDependencies:
-    next: "*"
-  checksum: cad2486e876d87877c007aa24d5753966dbf70f7f82b0a3f668ed22b19ac44c6d9f2cefe763232a822eec6e727f2981641dc1619c001c6715655e5d6a2805017
-  languageName: node
-  linkType: hard
-
 "@next/swc-darwin-arm64@npm:14.1.0":
   version: 14.1.0
   resolution: "@next/swc-darwin-arm64@npm:14.1.0"
@@ -3952,7 +3943,6 @@ __metadata:
     "@mui/joy": ^5.0.0-beta.25
     "@mui/material": ^5.15.7
     "@mui/styled-engine-sc": ^6.0.0-alpha.14
-    "@next/font": ^14.1.0
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18

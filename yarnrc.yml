@@ -1,9 +1,0 @@
-# Yarn configuration file
-# Example of setting a cache folder
-cacheFolder: "./.yarn/cache"
-
-# Example of setting a network timeout
-networkTimeout: 30000
-
-# Example of enabling telemetry
-enableTelemetry: false
