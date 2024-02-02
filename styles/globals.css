@@ -1,0 +1,12 @@
+* {
+  font-family: "Raleway" !important;
+}
+
+.custom-linear-progress .MuiLinearProgress-bar {
+  background-color: #f78b1e;
+}
+
+.custom-linear-progress.MuiLinearProgress-determinate {
+  background-color: lightgrey !important;
+  height: 3px;
+}
