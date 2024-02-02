@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p ${PORT}",
+    "lint": "next lint",
+    "prestart": "next build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -19,7 +20,6 @@
     "@mui/joy": "^5.0.0-beta.25",
     "@mui/material": "^5.15.7",
     "@mui/styled-engine-sc": "^6.0.0-alpha.14",
-    "@next/font": "^14.1.0",
     "axios": "^1.6.7",
     "mongodb": "^6.3.0",
     "next": "14.1.0",
