@@ -159,7 +159,7 @@ const UploadModalContent = () => {
             }}
           >
             <FormControlLabel
-              style={{ marginRight: 10 }}
+              style={{ marginRight: 10, width: 111 }}
               control={
                 <ToggleSwitch handleChecked={handleChecked} checked={checked} />
               }

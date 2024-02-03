@@ -147,10 +147,11 @@ function ManifestDropZone() {
               textAlign: "center",
               border: "dashed 1px lightgrey",
               borderRadius: 5,
+              cursor: "pointer",
             }}
           >
             <DescriptionIcon style={{ color: "#F78B1E" }} />
-            <Typography style={{ fontSize: "12px" }}>
+            <Typography style={{ fontSize: "12px", pointerEvents: "none" }}>
               Drag & Drop Here Or <b>Browse</b>
             </Typography>
           </div>
