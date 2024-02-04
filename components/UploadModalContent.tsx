@@ -231,7 +231,7 @@ const UploadModalContent = () => {
             </FormControl>
           </Box>
           <Box style={{ borderBottom: "1px solid lightgrey" }}>
-            <Typography style={{ fontSize: "12px" }} mt={1} fontWeight={800}>
+            <Typography style={{ fontSize: "12px" }} mt={1.6} fontWeight={800}>
               Location Checking:
             </Typography>
             <Typography
@@ -244,7 +244,7 @@ const UploadModalContent = () => {
             </Typography>
           </Box>
           <Box>
-            <Typography style={{ fontSize: "12px" }} mt={1} fontWeight={800}>
+            <Typography style={{ fontSize: "12px" }} mt={1.6} fontWeight={800}>
               Client:
             </Typography>
             <FormControl>

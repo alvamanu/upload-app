@@ -10,3 +10,17 @@
   background-color: lightgrey !important;
   height: 3px;
 }
+
+.MuiInputBase-root {
+  border-radius: 8px;
+}
+
+.MuiTypography-root,
+.MuiFormLabel-root,
+[data-testid="AccessTimeIcon"] {
+  color: #172d5b;
+}
+
+.MuiRadio-root {
+  padding-right: 4px;
+}
