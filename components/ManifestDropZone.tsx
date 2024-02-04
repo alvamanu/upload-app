@@ -107,7 +107,7 @@ function ManifestDropZone() {
       })
         .then((res) => {
           if (res.status === 200) {
-            handleToastOpen("Uploaded image successfully!", "success");
+            handleToastOpen("Uploaded file successfully!", "success");
           }
         })
         .catch((error) => {
