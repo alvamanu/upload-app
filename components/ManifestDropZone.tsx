@@ -151,16 +151,13 @@ function ManifestDropZone() {
           <input {...getInputProps()} />
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               padding: "30px 35px",
               border: "dashed 1px lightgrey",
               borderRadius: 5,
               cursor: "pointer",
             }}
           >
-            <DescriptionIcon style={{ color: "#F78B1E", marginRight: 3 }} />
+            <DescriptionIcon style={{ color: "#F78B1E", marginBottom: 6 }} />
             <Typography style={{ fontSize: "12px", pointerEvents: "none" }}>
               {!fileDropError ? (
                 <span>
@@ -215,9 +212,13 @@ function ManifestDropZone() {
               {fileName}
             </Typography>
             <Typography
-              style={{ fontSize: "12px", color: "#c0c0c0", marginLeft: "auto" }}
+              style={{
+                fontSize: "11px",
+                color: "#878787",
+                marginLeft: "auto",
+              }}
             >
-              {fileSize} MB
+              {fileSize}MB
             </Typography>
           </Box>
           <LinearProgress
