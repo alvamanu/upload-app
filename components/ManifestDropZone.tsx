@@ -25,6 +25,7 @@ function ManifestDropZone() {
   const [open, setOpen] = React.useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState("");
+  const [fileDropError, setFileDropError] = useState(false);
 
   const toastStyleSwitch = (type: string) => {
     switch (type) {
@@ -45,20 +46,27 @@ function ManifestDropZone() {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
-      // Set file name
-      setFileName(file.name);
-      // Set file size in MB (1 MB = 1048576 bytes)
-      setFileSize((file.size / 1048576).toFixed(2));
-      const reader = new FileReader();
+      if (file.size < 500000) {
+        // Set file name
+        setFileName(file.name);
+        // Set file size in MB (1 MB = 1048576 bytes)
+        setFileSize((file.size / 1048576).toFixed(2));
+        const reader = new FileReader();
 
-      reader.onabort = () => console.log("file reading was aborted");
-      reader.onerror = () => console.log("file reading has failed");
-      reader.onload = () => {
-        // Set base64Image state with the base64 string of the image
-        setBase64Image({ image: reader.result as never });
-      };
-      // Read the file as a data URL (base64 string)
-      reader.readAsDataURL(file);
+        reader.onabort = () => console.log("file reading was aborted");
+        reader.onerror = () => console.log("file reading has failed");
+        reader.onload = () => {
+          // Set base64Image state with the base64 string of the image
+          setBase64Image({ image: reader.result as never });
+        };
+        // Read the file as a data URL (base64 string)
+        reader.readAsDataURL(file);
+      } else {
+        setFileDropError(true);
+        setTimeout(() => {
+          setFileDropError(false);
+        }, 1000);
+      }
     });
   }, []);
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
@@ -98,19 +106,20 @@ function ManifestDropZone() {
         },
       })
         .then((res) => {
-          console.log(res);
           if (res.status === 200) {
-            setBase64Image({ image: "" });
             handleToastOpen("Uploaded image successfully!", "success");
-            setTimeout(() => {
-              setUploadProgress(0);
-            }, 1000);
           }
         })
         .catch((error) => {
           handleToastOpen("Error in upload", error);
+        })
+        .finally(() => {
           setBase64Image({ image: "" });
-          setUploadProgress(0);
+          setTimeout(() => {
+            setUploadProgress(0);
+            setFileName("no file selected");
+            setFileSize("0");
+          }, 1000);
         });
     } else {
       handleToastOpen("No file selected!", "error");
@@ -142,17 +151,24 @@ function ManifestDropZone() {
           <input {...getInputProps()} />
           <div
             style={{
-              display: "block",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               padding: "30px 35px",
-              textAlign: "center",
               border: "dashed 1px lightgrey",
               borderRadius: 5,
               cursor: "pointer",
             }}
           >
-            <DescriptionIcon style={{ color: "#F78B1E" }} />
+            <DescriptionIcon style={{ color: "#F78B1E", marginRight: 3 }} />
             <Typography style={{ fontSize: "12px", pointerEvents: "none" }}>
-              Drag & Drop Here Or <b>Browse</b>
+              {!fileDropError ? (
+                <span>
+                  Drag & Drop Here Or <b>Browse</b>
+                </span>
+              ) : (
+                "File is too large"
+              )}
             </Typography>
           </div>
         </div>
