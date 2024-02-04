@@ -208,7 +208,9 @@ function ManifestDropZone() {
           }}
         >
           <Box sx={{ display: "flex" }}>
-            <Typography style={{ fontSize: "12px", color: "#c0c0c0" }}>
+            <Typography
+              style={{ fontSize: "12px", color: "#c0c0c0", marginBottom: 4 }}
+            >
               {fileName}
             </Typography>
             <Typography
@@ -216,6 +218,7 @@ function ManifestDropZone() {
                 fontSize: "11px",
                 color: "#878787",
                 marginLeft: "auto",
+                transform: "translateY(2px)",
               }}
             >
               {fileSize}MB
