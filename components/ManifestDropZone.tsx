@@ -65,7 +65,7 @@ function ManifestDropZone() {
         setFileDropError(true);
         setTimeout(() => {
           setFileDropError(false);
-        }, 1000);
+        }, 2000);
       }
     });
   }, []);
@@ -164,7 +164,7 @@ function ManifestDropZone() {
                   Drag & Drop Here Or <b>Browse</b>
                 </span>
               ) : (
-                "File is too large"
+                "Size of 500KB exceeded"
               )}
             </Typography>
           </div>
